@@ -9,10 +9,10 @@
 <body class="bg-light">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Connectbot</a>
+        <a class="navbar-brand" href="../public/index.php">Connectbot</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link active" href="/bots">Bots</a></li>
+                <li class="nav-item"><a class="nav-link active" href="../public/index.php?route=bots">Bots</a></li>
             </ul>
         </div>
     </div>
@@ -21,7 +21,7 @@
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="h3 mb-0">Bots</h1>
-        <a href="/bots/create" class="btn btn-primary">Nuevo bot</a>
+        <a href="../public/index.php?route=bots/create" class="btn btn-primary">Nuevo bot</a>
     </div>
 
     <?php if (empty($bots)): ?>

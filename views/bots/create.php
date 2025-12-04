@@ -9,10 +9,10 @@
 <body class="bg-light">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Connectbot</a>
+        <a class="navbar-brand" href="../public/index.php">Connectbot</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link" href="/bots">Bots</a></li>
+                <li class="nav-item"><a class="nav-link" href="../public/index.php?route=bots">Bots</a></li>
             </ul>
         </div>
     </div>
@@ -21,7 +21,7 @@
 <div class="container">
     <h1 class="h3 mb-3">Crear nuevo bot</h1>
 
-    <form method="post" action="/bots">
+    <form method="post" action="../public/index.php?route=bots">
         <div class="mb-3">
             <label for="name" class="form-label">Nombre del bot</label>
             <input type="text" name="name" id="name" class="form-control" required>
@@ -37,7 +37,7 @@
             <div class="form-text">URL del flujo de n8n que gestionará las respuestas de este bot.</div>
         </div>
         <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="/bots" class="btn btn-secondary ms-2">Cancelar</a>
+        <a href="../public/index.php?route=bots" class="btn btn-secondary ms-2">Cancelar</a>
     </form>
 </div>
 
