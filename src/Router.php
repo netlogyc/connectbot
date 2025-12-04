@@ -23,6 +23,16 @@ class Router
     public function dispatch(string $uri, string $method): void
     {
         $path = parse_url($uri, PHP_URL_PATH) ?: '/';
+
+        // Normalizar prefijo cuando la app cuelga de /chatbotnl/public
+        $prefix = '/chatbotnl/public';
+        if (str_starts_with($path, $prefix)) {
+            $path = substr($path, strlen($prefix));
+            if ($path === '' || $path === false) {
+                $path = '/';
+            }
+        }
+
         $action = $this->routes[$method][$path] ?? null;
 
         if (!$action) {
