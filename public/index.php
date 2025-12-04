@@ -6,7 +6,7 @@ declare(strict_types=1);
 
 $installedFlag = __DIR__ . '/../storage/.installed';
 if (!file_exists($installedFlag)) {
-    header('Location: /install.php');
+    header('Location: install.php');
     exit;
 }
 

@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="alert alert-success">
                             Instalación completada correctamente. Ahora puedes eliminar o proteger <code>public/install.php</code> y acceder al panel principal.
                         </div>
-                        <a href="/" class="btn btn-primary">Ir al panel</a>
+                        <a href="./" class="btn btn-primary">Ir al panel</a>
                     <?php else: ?>
                         <p class="mb-3">Introduce los datos de conexión a tu base de datos MariaDB/MySQL. Estos datos se guardarán en <code>config/config.php</code>.</p>
                         <?php if ($error): ?>
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="db_pass" class="form-label">Contraseña</label>
                                 <input type="password" name="db_pass" id="db_pass" class="form-control">
                             </div>
-                            <button type="submit" class="btn btn-success">Instalar</button>
+                            <button type="submit" class="btn btn成功">Instalar</button>
                         </form>
                     <?php endif; ?>
                 </div>
