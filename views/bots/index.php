@@ -33,6 +33,7 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Slug</th>
+                <th>Webhook n8n</th>
             </tr>
             </thead>
             <tbody>
@@ -41,6 +42,7 @@
                     <td><?= (int)$bot['id'] ?></td>
                     <td><?= htmlspecialchars($bot['name']) ?></td>
                     <td><?= htmlspecialchars($bot['slug']) ?></td>
+                    <td><?= htmlspecialchars($bot['webhook_url'] ?? '') ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

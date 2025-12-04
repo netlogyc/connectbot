@@ -1,0 +1,2 @@
+ALTER TABLE bots
+    ADD COLUMN webhook_url VARCHAR(1024) NULL AFTER slug;

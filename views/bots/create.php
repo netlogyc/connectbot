@@ -31,6 +31,11 @@
             <input type="text" name="slug" id="slug" class="form-control" required>
             <div class="form-text">Identificador único del bot (por ejemplo, "demo-netlogyc").</div>
         </div>
+        <div class="mb-3">
+            <label for="webhook_url" class="form-label">Webhook de n8n</label>
+            <input type="url" name="webhook_url" id="webhook_url" class="form-control" placeholder="https://ian8nwebhook.netlogyc.org/webhook/.../chat">
+            <div class="form-text">URL del flujo de n8n que gestionará las respuestas de este bot.</div>
+        </div>
         <button type="submit" class="btn btn-success">Guardar</button>
         <a href="/bots" class="btn btn-secondary ms-2">Cancelar</a>
     </form>

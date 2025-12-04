@@ -16,7 +16,7 @@ class BotController
 
     public function index(): void
     {
-        $stmt = $this->pdo->query('SELECT id, name, slug FROM bots ORDER BY id DESC');
+        $stmt = $this->pdo->query('SELECT id, name, slug, webhook_url FROM bots ORDER BY id DESC');
         $bots = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $title = 'Bots - Connectbot';
         require __DIR__ . '/../../../views/bots/index.php';
@@ -32,6 +32,7 @@ class BotController
     {
         $name = trim($_POST['name'] ?? '');
         $slug = trim($_POST['slug'] ?? '');
+        $webhookUrl = trim($_POST['webhook_url'] ?? '');
 
         if ($name === '' || $slug === '') {
             http_response_code(422);
@@ -39,10 +40,11 @@ class BotController
             return;
         }
 
-        $stmt = $this->pdo->prepare('INSERT INTO bots (name, slug) VALUES (:name, :slug)');
+        $stmt = $this->pdo->prepare('INSERT INTO bots (name, slug, webhook_url) VALUES (:name, :slug, :webhook_url)');
         $stmt->execute([
             ':name' => $name,
             ':slug' => $slug,
+            ':webhook_url' => $webhookUrl,
         ]);
 
         header('Location: /bots');
