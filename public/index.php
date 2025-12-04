@@ -25,4 +25,10 @@ $router->post('/bots', 'BotController@store');
 // Endpoint API de chat web
 $router->post('/api/chat', 'ChatController@handleWebChat');
 
-$router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
+// Normalizar URI a partir de querystring ?route= cuando se usa index.php en subcarpetas
+$uri = $_SERVER['REQUEST_URI'];
+if (isset($_GET['route']) && $_GET['route'] !== '') {
+    $uri = '/' . ltrim((string)$_GET['route'], '/');
+}
+
+$router->dispatch($uri, $_SERVER['REQUEST_METHOD']);
